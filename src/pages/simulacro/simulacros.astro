@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const simulacros = [
+  {
+    id: "1",
+    title: "Simulacro 1 - Matemáticas",
+    description: "Simulacro de examen de matemáticas para la UNAS",
+    url: "/simulacro/1",
+  },
+  {
+    id: "2",
+    title: "Simulacro 2 - Comunicación",
+    description: "Simulacro de examen de comunicación para la UNAS",
+    url: "/simulacro/2",
+  },
+  {
+    id: "3",
+    title: "Simulacro 3 - Biología",
+    description: "Simulacro de examen de biología para la UNAS",
+    url: "/simulacro/3",
+  },
+  {
+    id: "4",
+    title: "Simulacro 4 - Física",
+    description: "Simulacro de examen de física para la UNAS",
+    url: "/simulacro/4",
+  },
+  {
+    id: "5",
+    title: "Simulacro 5 - Química",
+    description: "Simulacro de examen de química para la UNAS",
+    url: "/simulacro/5",
+  },
+];
+---
+
+<Layout title="Simulacros">
+  <ul>
+    {
+      simulacros.map((simulacro) => (
+        <li>
+          <a href={simulacro.url}>{simulacro.title}</a>
+          <p>{simulacro.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
