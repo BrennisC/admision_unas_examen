@@ -1,0 +1,102 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Exámenes">
+  <div class="container">
+    <h2>Exámenes</h2>
+
+    <section class="search-bar">
+      <input
+        type="text"
+        placeholder="Buscar examen..."
+        aria-label="Buscar examen"
+      />
+      <button class="search-button" aria-label="Buscar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+          ></path>
+        </svg>
+      </button>
+    </section>
+
+    <div id="exams"></div>
+  </div>
+
+  <style>
+    .container {
+      padding: 1rem;
+    }
+
+    h2 {
+      margin: 2rem 0 1rem;
+      color: #2c3d00;
+      font-size: 1.5rem;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      background-color: #e8e7ee;
+      font-size: 1rem;
+    }
+
+    .search-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #51d322;
+    }
+  </style>
+
+  <script type="module">
+    const searchInput = document.querySelector("input[type='text']");
+    const searchButton = document.querySelector(".search-button");
+    const exams = document.querySelector("#exams");
+
+    searchInput?.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        searchButton?.click();
+      }
+    });
+
+    searchButton?.addEventListener("click", () => {
+      exams.innerHTML = "";
+
+      const examName = searchInput.value.trim();
+      if (!examName) return;
+
+      const result = document.createElement("p");
+      result.textContent = `Resultado: ${examName}`;
+      exams.appendChild(result);
+    });
+  </script>
+</Layout>

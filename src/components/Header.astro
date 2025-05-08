@@ -1,0 +1,65 @@
+<header class="unas-header">
+  <section class="header-title">
+    <h1>Prepárate para el Examen de Admisión UNAS</h1>
+  </section>
+
+  <section class="header-nav">
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/simulacro/simulacros">Simulacro</a></li>
+        <li><a href="/material/materiales">Materiales</a></li>
+        <li><a href="/examen/examenes">Exámenes</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<style>
+  .unas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: #e8e7ee;
+    flex-wrap: wrap;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .header-title h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .header-nav a:hover {
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .unas-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header-nav ul {
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+  }
+</style>
